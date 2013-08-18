@@ -8,6 +8,8 @@
 
 (function(_, Backbone) {
 
+	// API reference: https://developers.google.com/youtube/v3
+
 	// Constants
 	var api = "https://gdata.youtube.com"
 
