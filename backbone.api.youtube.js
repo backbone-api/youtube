@@ -13,6 +13,8 @@
 	// Constants
 	var api = "https://gdata.youtube.com"
 
+	// Support backbone-app (if available)
+	var Model = ( typeof APP != "undefined" && !_.isUndefined( APP.Model) ) ? APP.Model : Backbone.Model;
 
 	// Base model - mainly used for setup options
 	var Youtube = new Backbone.Model({
@@ -28,7 +30,7 @@
 	// Models
 
 	//
-	Youtube.Models.Video = Backbone.Model.extend({
+	Youtube.Models.Video = Model.extend({
 		url: function(){
 			return api +"/feeds/api/videos/"+ this.id +"?"+ $.param( this.params )
 		},
