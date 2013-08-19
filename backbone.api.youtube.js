@@ -29,7 +29,10 @@
 
 	//
 	Youtube.Models.Video = Backbone.Model.extend({
-		defaults : {
+		url: function(){
+			return api +"/feeds/api/videos/"+ this.id +"?"+ $.param( this.params )
+		},
+		params : {
 			v : 2,
 			alt: "json"
 		},
